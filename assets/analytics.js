@@ -115,7 +115,7 @@
         '#kz-consent .kz-no:hover{border-color:#fff;color:#fff}'+
         '#kz-consent .kz-yes{background:#d4af37;color:#241d05;border-color:#d4af37}'+
         '#kz-consent .kz-yes:hover{background:#e0bd4f}'+
-        '@media(max-width:560px){#kz-consent .kz-in{flex-direction:column;align-items:stretch}#kz-consent .kz-btns{justify-content:flex-end}}';
+        '@media(max-width:560px){#kz-consent .kz-in{flex-direction:column;align-items:stretch}#kz-consent p{flex:0 0 auto}#kz-consent .kz-btns{justify-content:flex-end}}';
       var style = document.createElement('style'); style.textContent = css; document.head.appendChild(style);
 
       var wrap = document.createElement('div');

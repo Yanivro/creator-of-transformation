@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//KENAZ//Unlock Your Magnetism//EN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:unlock-your-magnetism-20261126@creator.yanivrose.com
+DTSTAMP:20261118T000000Z
+DTSTART:20261126T120000Z
+DTEND:20261126T131500Z
+SUMMARY:Unlock Your Magnetism (Patricia & Yaniv)
+DESCRIPTION:Free live webinar. The video link will be emailed to you before we start. https://creator.yanivrose.com/magnetism/
+LOCATION:Online (link by email)
+END:VEVENT
+END:VCALENDAR
