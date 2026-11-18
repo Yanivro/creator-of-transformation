@@ -48,7 +48,7 @@
   .nav-cta:hover{background:#fff;color:var(--blue)}
 
   /* hero */
-  .hero{position:relative;background:var(--blue);color:#fff;overflow:hidden;padding-block:clamp(130px,14vw,180px) clamp(70px,9vw,120px)}
+  .hero{position:relative;background:linear-gradient(90deg,rgba(20,20,20,.82) 0%,rgba(20,20,20,.6) 45%,rgba(20,20,20,.38) 100%),linear-gradient(0deg,rgba(20,20,20,.45),rgba(20,20,20,0) 40%),url(photos/hero.jpg) 50% 30%/cover,var(--blue);color:#fff;overflow:hidden;padding-block:clamp(130px,14vw,180px) clamp(70px,9vw,120px)}
   .hero canvas{position:absolute;inset:0;width:100%;height:100%}
   .hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:48px;align-items:end}
   @media (max-width:860px){.hero .wrap{grid-template-columns:1fr}}
@@ -201,7 +201,8 @@
   .tzsel:focus-visible{outline:3px solid #d4af37;outline-offset:2px}
   .tzchange{color:#d4af37;text-decoration:underline;text-underline-offset:3px}
   /* KENAZ palette overrides */
-  .hero h1{font-weight:300}
+  .hero h1{font-weight:300;text-shadow:0 2px 24px rgba(0,0,0,.45)}
+  .hero .sub{text-shadow:0 1px 12px rgba(0,0,0,.6)}
   .hero h1 span{color:var(--gold)}
   .pole{background:var(--gold);color:#1b1b1b}
   .pole .kicker{color:#1b1b1b}
@@ -210,6 +211,21 @@
   .curious li{font-weight:500}
   .node.first{font-weight:500}
   .side q{font-weight:400}
+
+  /* hover */
+  .node,.curious li,.gallery figure,.host img,.side,.cal a,.nav-cta{transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s,border-color .35s,background .35s}
+  @media (hover:hover){
+    .node:hover{transform:translate(-50%,-50%) scale(1.1);z-index:3;border-color:var(--gold);box-shadow:0 18px 44px rgba(27,27,27,.18)}
+    .node.first:hover{box-shadow:0 18px 44px rgba(212,175,55,.35)}
+    .loop:hover .hub b{color:var(--gold)}
+    .curious li:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 14px 34px rgba(27,27,27,.1)}
+    .gallery figure:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(27,27,27,.2);z-index:2}
+    .host img:hover{transform:scale(1.04) rotate(-1deg)}
+    .cal a:hover{background:var(--blue);color:#fff}
+    .opts label:hover span{border-color:var(--gold)}
+  }
+  @media (hover:hover) and (max-width:900px){.node:hover{transform:scale(1.03)}}
+  .hub b{transition:color .35s}
   @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 <script src="../assets/analytics.js" defer></script>
@@ -307,7 +323,7 @@
       <figure class="g-md"><img src="photos/k07.jpg" alt="A training group in a bright hall with a drum and cards on the floor" loading="lazy" decoding="async"></figure>
       <figure class="g-md"><img src="photos/k05.jpg" alt="A big group in white laughing and pulling faces on a terrace" loading="lazy" decoding="async"></figure>
       <figure class="g-sm"><img src="photos/k14.jpg" alt="A close group hug in a garden" loading="lazy" decoding="async"></figure>
-      <figure class="g-sm"><img src="https://ik.imagekit.io/ix5ztlclm/tr:w-800,q-75/AR/non_watermarked/Relational%20Alchemy%20v3__edits__20240505-DSC05614-1600.jpg" alt="A big group hug at Relational Alchemy" loading="lazy" decoding="async"></figure>
+      <figure class="g-sm"><img src="photos/k12.jpg" alt="A KENAZ group together in a practice hall at night" loading="lazy" decoding="async"></figure>
       <figure class="g-sm"><img src="photos/k03.jpg" alt="A group in white by a pool" loading="lazy" decoding="async"></figure>
     </div>
   </div>
@@ -403,7 +419,7 @@
       ctx.bezierCurveTo(ax+w*.2,y-s*1.8,bx-w*.2,y-s*1.8,bx,y);
       ctx.moveTo(ax,y);
       ctx.bezierCurveTo(ax+w*.2,y+s*1.8,bx-w*.2,y+s*1.8,bx,y);
-      ctx.strokeStyle=i%3===0?'rgba(212,175,55,.5)':'rgba(255,255,255,.10)';
+      ctx.strokeStyle=i%3===0?'rgba(212,175,55,.32)':'rgba(255,255,255,.06)';
       ctx.lineWidth=i%3===0?1.4:1; ctx.stroke();
     }
   }
