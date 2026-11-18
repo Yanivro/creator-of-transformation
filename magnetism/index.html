@@ -178,6 +178,8 @@
   .opts span{display:inline-block;padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);font-size:14px}
   .opts input:checked+span{background:var(--blue);border-color:var(--blue);color:#fff}
   .attend{margin-top:20px}
+  .zoom{display:inline-flex;gap:10px;align-items:center;margin-top:16px;background:var(--gold);color:#241d05;font-weight:600;letter-spacing:.04em;text-decoration:none;padding:14px 24px;border-radius:999px}
+  .zoomid{font-size:14px;color:var(--muted);margin-top:8px}
   .opts input:focus-visible+span{outline:3px solid #d4af37;outline-offset:2px}
   label.check{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted);margin-top:14px;cursor:pointer}
   label.check input{margin-top:4px;accent-color:var(--red)}
@@ -392,7 +394,9 @@
       </form>
       <div class="done" id="done">
         <h3 id="done-h">You're in</h3>
-        <p id="done-p">We'll email you the link before we start (check promotions or spam if you don't see it). Add it to your calendar now so it doesn't slip:</p>
+        <p id="done-p">Here's your link to join on Thursday. Save it, and add the session to your calendar so it doesn't slip:</p>
+        <a class="zoom" id="zoom" href="https://us02web.zoom.us/j/89448980735?pwd=E0TnELQrapYRo7OUJH1bGANqTmrbTo.1" target="_blank" rel="noopener" data-cta="zoom_link">Join on Zoom <span aria-hidden="true">→</span></a>
+        <p class="zoomid" id="zoomid">Meeting ID 894 4898 0735</p>
         <div class="cal" id="cal">
           <a id="gcal" target="_blank" rel="noopener" data-cta="gcal">Google Calendar</a>
           <a href="cal/unlock-your-magnetism.ics" download data-cta="ics">Apple / Outlook</a>
@@ -438,8 +442,8 @@
   document.getElementById("gcal").href = "https://calendar.google.com/calendar/render?action=TEMPLATE" +
     "&text=" + encodeURIComponent("Unlock Your Magnetism (Patricia & Yaniv)") +
     "&dates=" + fmt(START) + "/" + fmt(END) +
-    "&details=" + encodeURIComponent("Free live webinar. The video link will be emailed to you before we start. https://creator.yanivrose.com/magnetism/") +
-    "&location=" + encodeURIComponent("Online (link by email)");
+    "&details=" + encodeURIComponent("Free live webinar with Patricia and Yaniv.\n\nJoin on Zoom: https://us02web.zoom.us/j/89448980735?pwd=E0TnELQrapYRo7OUJH1bGANqTmrbTo.1") +
+    "&location=" + encodeURIComponent("https://us02web.zoom.us/j/89448980735?pwd=E0TnELQrapYRo7OUJH1bGANqTmrbTo.1");
 
   const f = document.getElementById("f"), btn = document.getElementById("btn"), err = document.getElementById("err");
   function fail(msg) { err.textContent = msg; err.style.display = "block"; btn.disabled = false; btn.textContent = "Save my seat"; }
@@ -461,6 +465,8 @@
         document.getElementById("done-h").textContent = "We'll keep you posted";
         document.getElementById("done-p").textContent = "Thank you for letting us know. We'll email you as soon as the next date is set.";
         document.getElementById("cal").style.display = "none";
+        document.getElementById("zoom").style.display = "none";
+        document.getElementById("zoomid").style.display = "none";
       }
       f.style.display = "none"; document.getElementById("done").style.display = "block";
       document.getElementById("done").scrollIntoView({ behavior: "smooth", block: "center" });
