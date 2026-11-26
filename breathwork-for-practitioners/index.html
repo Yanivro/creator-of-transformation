@@ -9,7 +9,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Breathwork for Practitioners · 50-Hour Training · Chiang Mai · KENAZ" />
 <meta property="og:description" content="Breathwork for Practitioners: a 50-hour training in functional breathwork and pranayama with KENAZ. Chiang Mai, Thailand, 9–16 January 2027." />
-<meta property="og:image" content="photos/hero-wide.jpg" />
+<meta property="og:image" content="video/breathing-poster.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="../assets/kenaz/6247a7dbbd6a4724bd88197664e0f6dd.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -114,7 +114,7 @@
   /* ============ HERO ============ */
   .hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;padding:120px 0 clamp(56px,9vh,104px);color:#fff;overflow:hidden;background:#1b1b1b;isolation:isolate}
   .hero .bg{position:absolute;inset:0;z-index:-2}
-  .hero .bg img{width:100%;height:100%;object-fit:cover;object-position:70% 30%}
+  .hero .bg video{width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block}
   .hero::after{content:"";position:absolute;inset:0;z-index:-1;
     background:linear-gradient(100deg,rgba(18,15,12,.9) 0%,rgba(18,15,12,.66) 38%,rgba(18,15,12,.12) 62%,rgba(18,15,12,0) 80%),
                linear-gradient(to top,rgba(18,15,12,.82),rgba(18,15,12,0) 48%),
@@ -130,7 +130,7 @@
   .hero .micro{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.78)}
   @media (max-width:700px){
     .hero{padding-top:310px;padding-bottom:44px;align-items:flex-end}
-    .hero .bg img{object-position:80% 0}
+    .hero .bg video{object-position:62% 50%}
     .hero::after{background:linear-gradient(to top,rgba(18,15,12,.94) 0%,rgba(18,15,12,.86) 52%,rgba(18,15,12,.58) 74%,rgba(18,15,12,.12) 90%),
                             linear-gradient(to bottom,rgba(18,15,12,.55),rgba(18,15,12,0) 14%)}
     .hero .btn{width:100%}
@@ -163,9 +163,9 @@
 
   /* ============ ABOUT ============ */
   .split{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(30px,5vw,76px);align-items:center}
-  .split .media img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:2px}
+  .split .media video{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:2px;display:block}
   .about-copy p{margin-top:1.2em;color:#4a4a4a;font-size:clamp(16px,1.2vw,18.5px);line-height:1.75;max-width:60ch}
-  @media (max-width:880px){.split{grid-template-columns:1fr}.split .media{order:-1}.split .media img{aspect-ratio:16/11}}
+  @media (max-width:880px){.split{grid-template-columns:1fr}.split .media{order:-1}.split .media video{aspect-ratio:16/11}}
 
   /* ============ CURRICULUM ============ */
   .mod-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(14px,1.8vw,24px);margin-top:clamp(34px,4.4vw,56px)}
@@ -184,6 +184,12 @@
   .dark{background:var(--ink);color:#fff;position:relative;overflow:hidden}
   .dark::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% -10%,rgba(212,175,55,.12),transparent 60%);pointer-events:none}
   .dark .wrap{position:relative;z-index:2}
+  .vid-bg{position:absolute;inset:0;z-index:0}
+  .vid-bg video{width:100%;height:100%;object-fit:cover;display:block}
+  .vid-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.80),rgba(20,18,16,.86))}
+  .vid-band{min-height:clamp(380px,62vh,620px);display:flex;align-items:center;text-align:center}
+  .vid-band .vid-bg::after{background:rgba(20,18,16,.5)}
+  .vid-band h2{margin:0 auto;max-width:16ch;color:#fff}
   .timeline{margin-top:clamp(34px,4.4vw,56px);max-width:880px;position:relative}
   .timeline::before{content:"";position:absolute;left:0;top:10px;bottom:10px;width:1px;background:rgba(212,175,55,.4)}
   .timeline li{position:relative;display:grid;grid-template-columns:200px 1fr;gap:6px clamp(18px,3vw,44px);padding:0 0 clamp(26px,3vw,38px) 34px}
@@ -370,10 +376,7 @@
 <!-- ===================== 1. HERO ===================== -->
 <header class="hero" id="top">
   <div class="bg">
-    <picture>
-      <source media="(max-width:700px)" srcset="photos/hero-portrait.jpg" width="943" height="1500" />
-      <img src="photos/hero-wide.jpg" width="2000" height="1376" fetchpriority="high" decoding="async" alt="A teacher in a cream embroidered dress sitting on a wooden floor, mid-breath with her mouth open, beside a participant lying on a cushion with an eye mask, a forest window behind them" />
-    </picture>
+    <video autoplay muted loop playsinline preload="auto" poster="video/breathing-poster.jpg" aria-hidden="true" tabindex="-1"><source src="video/breathing-loop.webm" type="video/webm" /><source src="video/breathing-loop.mp4" type="video/mp4" /></video>
   </div>
   <div class="hero-inner">
     <div class="hero-col">
@@ -445,7 +448,7 @@
       <p class="reveal">With a strong emphasis on trauma awareness, nervous system regulation and responsible facilitation, you will learn not only different breathing techniques but also when, why and how to use them.</p>
     </div>
     <div class="media reveal d2">
-      <img src="photos/about.jpg" width="960" height="1200" loading="lazy" decoding="async" alt="A participant lying on a striped cushion with a teal eye mask, a teacher's arm resting beside her" />
+      <video autoplay muted loop playsinline preload="none" poster="video/belly-poster.jpg" aria-hidden="true" tabindex="-1"><source src="video/belly-loop.webm" type="video/webm" /><source src="video/belly-loop.mp4" type="video/mp4" /></video>
     </div>
   </div>
 </section>
@@ -478,6 +481,7 @@
 
 <!-- ===================== 6. A DAY ===================== -->
 <section class="dark" id="day">
+  <div class="vid-bg"><video autoplay muted loop playsinline preload="none" poster="video/water-poster.jpg" aria-hidden="true" tabindex="-1"><source src="video/water-loop.webm" type="video/webm" /><source src="video/water-loop.mp4" type="video/mp4" /></video></div>
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow on-dark reveal">A day in the training</span>
@@ -516,19 +520,10 @@
 </section>
 
 <!-- ===================== 8. PRACTICE GALLERY ===================== -->
-<section id="gallery-section">
+<section class="dark vid-band" id="gallery-section" aria-label="Breath, taught in the body">
+  <div class="vid-bg"><video autoplay muted loop playsinline preload="none" poster="video/eyes-poster.jpg" aria-hidden="true" tabindex="-1"><source src="video/eyes-loop.webm" type="video/webm" /><source src="video/eyes-loop.mp4" type="video/mp4" /></video></div>
   <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow reveal">KENAZ in practice</span>
-      <h2 class="reveal d1">Breath, taught in the body.</h2>
-    </div>
-    <div class="gallery reveal d1">
-      <figure class="gal-1"><img src="photos/g-facilitators.jpg" width="1400" height="933" loading="lazy" decoding="async" alt="Two facilitators with a participant lying under a blanket, one demonstrating a breath with her mouth open, the other resting a hand on the participant's belly" /></figure>
-      <figure class="gal-2"><img src="photos/g-shala.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="A group seated on mats and cushions on a wooden floor in an open-air hall, facing a jungle view" /></figure>
-      <figure class="gal-3"><img src="photos/g-candle.jpg" width="1400" height="933" loading="lazy" decoding="async" alt="A woman with her eyes closed and her mouth slightly open, moving with the breath in a candlelit room" /></figure>
-      <figure class="gal-4"><img src="photos/g-breath.jpg" width="1400" height="787" loading="lazy" decoding="async" alt="Close portrait of a woman with her eyes closed and mouth open mid-breath, one hand raised, soft green light behind her" /></figure>
-      <figure class="gal-5"><img src="photos/g-water.jpg" width="1400" height="787" loading="lazy" decoding="async" alt="A woman with her mouth open standing in shallow turquoise water beside granite boulders, holding up a woman floating on her back" /></figure>
-    </div>
+    <h2 class="reveal">Breath, taught in the body.</h2>
   </div>
 </section>
 
@@ -791,6 +786,7 @@ var FACTS = {
   } else { showAll(); }
 
   // ---- anchor scroll with nav offset ----
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) { document.querySelectorAll('video').forEach(function(v){ v.removeAttribute('autoplay'); v.pause(); }); }
   var reduceMotion = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
     a.addEventListener('click', function(ev){
