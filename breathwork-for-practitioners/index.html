@@ -9,7 +9,9 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Breathwork for Practitioners · 50-Hour Training · Chiang Mai · KENAZ" />
 <meta property="og:description" content="Breathwork for Practitioners: a 50-hour training in functional breathwork and pranayama with KENAZ. Chiang Mai, Thailand, 11–18 January 2027." />
-<meta property="og:image" content="video/breathing-poster.jpg" />
+<meta property="og:image" content="https://creator.yanivrose.com/breathwork-for-practitioners/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="../assets/kenaz/6247a7dbbd6a4724bd88197664e0f6dd.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -151,6 +153,26 @@
     .pillar:first-child{border-top:0;padding-top:4px}
   }
 
+  /* ============ MOMENTS ============ */
+  .moments{background:var(--bg)}
+  .moments-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(30px,5vw,80px);align-items:center}
+  .moments-photo{border-radius:2px;overflow:hidden;border:1px solid var(--border);background:#eceae4}
+  .moments-photo img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:50% 40%}
+  .moments .eyebrow{display:block}
+  .moment-list{display:grid;gap:clamp(12px,1.4vw,18px);margin-top:clamp(20px,2.4vw,30px)}
+  .moment{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--accent);border-radius:2px;padding:clamp(20px,2.2vw,30px) clamp(22px,2.6vw,36px);font-size:clamp(20px,1.9vw,26px);font-weight:300;line-height:1.3;letter-spacing:-.01em;text-wrap:balance}
+  .moments h2{margin-top:clamp(28px,3.4vw,46px);max-width:20ch}
+  .moments h2 .gold{color:var(--accent-text)}
+  @media (max-width:880px){
+    .moments-grid{grid-template-columns:1fr}
+    .moments-photo img{aspect-ratio:auto;height:min(70vh,520px)}
+  }
+
+  /* ============ BRIDGE ============ */
+  .bridge{padding:clamp(48px,6vw,84px) 0}
+  .bridge p{max-width:48ch;margin:0 auto;text-align:center;font-size:clamp(18px,1.7vw,24px);font-weight:300;line-height:1.55;color:#4a4a4a;text-wrap:balance;position:relative;padding-top:28px}
+  .bridge p::before{content:"";position:absolute;top:0;left:50%;width:64px;height:2px;margin-left:-32px;background:var(--accent)}
+
   /* ============ FOR YOU ============ */
   .aud-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(14px,1.8vw,24px);margin-top:clamp(34px,4.4vw,56px)}
   .aud{grid-column:span 2;background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:clamp(24px,2.4vw,34px);border-top:2px solid var(--accent);transition:box-shadow .4s var(--ease),transform .4s var(--ease)}
@@ -288,7 +310,7 @@
   .faq-list p{padding:0 34px 22px 0;color:#4d4d4d;max-width:66ch}
 
   /* ============ REGISTER ============ */
-  .reg-wrap{max-width:720px}
+  .reg-wrap{max-width:var(--maxw)}
   .reg-card{margin-top:clamp(28px,3.6vw,44px);background:var(--surface);border:1px solid var(--border);border-top:2px solid var(--accent);border-radius:2px;padding:clamp(22px,3.4vw,44px)}
   .field{margin-bottom:22px;border:0;min-width:0}
   .field label,.field legend{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#4a4a4a;margin-bottom:9px;font-weight:500;padding:0}
@@ -327,6 +349,33 @@
   .success h3:focus{outline:none}
   .success p{color:#4d4d4d;margin:14px auto 0;max-width:46ch}
   @keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+
+  /* ============ REGISTER BAND ============ */
+  .reg-band{max-width:56ch}
+  .reg-band h2{margin:0}
+  .reg-band .lead{margin:1em 0 1.6em}
+
+  /* ============ SIGN-UP POP-UP ============ */
+  #signup{width:calc(100% - 40px);max-width:640px;max-height:calc(100dvh - 40px);margin:auto;padding:0;border:0;background:var(--surface);color:var(--fg);
+    border-top:2px solid var(--accent);border-radius:2px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+  #signup[open]{display:flex;flex-direction:column}
+  .dlg-scroll{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+  #signup::backdrop{background:rgba(27,27,27,.62)}
+  #signup.dlg-fallback{position:fixed;inset:0;z-index:1000;box-shadow:0 0 0 100vmax rgba(27,27,27,.62)}
+  #signup .reg-card{margin:0;border:0;border-radius:0;padding:clamp(24px,4vw,44px)}
+  .dlg-head{padding-right:40px;margin-bottom:26px}
+  .dlg-head h2{font-size:clamp(26px,3.4vw,38px)}
+  .dlg-head .lead{margin-top:.8em;font-size:clamp(15.5px,1.2vw,17px)}
+  .dlg-close{position:absolute;top:10px;right:10px;z-index:2;width:48px;height:48px;display:grid;place-items:center;background:transparent;border:0;border-radius:2px;cursor:pointer;color:var(--fg)}
+  .dlg-close path{fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round}
+  .dlg-close:focus-visible{outline:2px solid var(--accent-deep);outline-offset:-4px}
+  @media (hover:hover){.dlg-close:hover{color:var(--accent-text)}}
+  html.dlg-open,body.dlg-open{overflow:hidden}
+  #signup .success .btn{margin-top:26px;width:auto}
+  @media (max-width:600px){
+    #signup{width:100%;max-width:none;height:100dvh;max-height:none;border-radius:0;border-top-width:3px}
+  }
 
   /* ============ FOOTER ============ */
   footer{background:var(--ink-2);color:rgba(255,255,255,.72);padding:clamp(44px,6vw,68px) 0}
@@ -370,7 +419,7 @@
     <a href="#venue">Venue</a>
     <a href="#pricing">Price</a>
   </div>
-  <a class="nav-cta" href="#register" data-cta="Nav Reserve">Reserve your place</a>
+  <a class="nav-cta" href="#register" data-signup="nav" data-cta="Nav Reserve">Reserve your place</a>
 </nav>
 
 <!-- ===================== 1. HERO ===================== -->
@@ -381,11 +430,11 @@
   <div class="hero-inner">
     <div class="hero-col">
       <span class="eyebrow on-dark reveal">Breathwork for Practitioners · 50-hour training · Chiang Mai</span>
-      <h1 class="reveal d1">Bring breathwork into the work you already do.</h1>
+      <h1 class="reveal d1">Be the calm one<br />in the room.</h1>
       <div class="reveal d1"><span class="hero-tag"><span class="dot"></span><span><span data-fact="dates">11–18 January 2027</span> · La Tierra, Chiang Mai</span></span></div>
-      <p class="sub reveal d2">Functional breathwork and advanced pranayama, taught with a clear understanding of the nervous system. A week to learn the techniques, and when, why and how to use them with the people you work with.</p>
+      <p class="sub reveal d2">Learn to steady yourself with the breath, and give the people you work with tools to stay resilient and move through what comes up.</p>
       <div class="hero-actions reveal d3">
-        <a class="btn btn-gold" href="#register" data-cta="Hero Reserve">Reserve your place <span class="arr">→</span></a>
+        <a class="btn btn-gold" href="#register" data-signup="hero" data-cta="Hero Reserve">Reserve your place <span class="arr">→</span></a>
         <a class="btn btn-ghost" href="#curriculum" data-cta="Hero Curriculum">See the curriculum</a>
         <span class="micro">From <span data-fact="priceCourse">฿21,000</span></span>
       </div>
@@ -394,6 +443,24 @@
 </header>
 
 <main>
+
+<!-- ===================== 1b. MOMENTS ===================== -->
+<section class="moments" id="moments" aria-label="Moments you may recognise">
+  <div class="wrap">
+    <div class="moments-grid">
+      <div class="moments-photo reveal"><img src="photos/web-session.jpg" width="1400" height="1871" loading="lazy" decoding="async" alt="A practitioner sitting calmly beside a client who is resting under a blanket" /></div>
+      <div>
+        <span class="eyebrow reveal">You know these moments</span>
+        <div class="moment-list">
+          <p class="moment reveal">A student starts crying in the middle of your yoga class.</p>
+          <p class="moment reveal d1">A client gets overwhelmed in the middle of a session.</p>
+          <p class="moment reveal d2">An employee shuts down halfway through a feedback session.</p>
+        </div>
+        <h2 class="reveal">You already handle a lot. <span class="gold">Let the breath do the rest.</span></h2>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ===================== 2. THREE PILLARS ===================== -->
 <section class="pillars" aria-label="Three pillars of the training">
@@ -424,8 +491,8 @@
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow reveal">Who this is for</span>
-      <h2 class="reveal d1">You don't need to become a breathwork teacher. You need breath in your toolkit.</h2>
-      <p class="lead muted reveal d2">This training is for people who already work with others, or want to, and would like to add breathwork safely and with confidence. No previous professional breathwork experience is necessary. A genuine interest in learning and exploring the breath is what matters.</p>
+      <h2 class="reveal d1">Bring breathwork into the work you already do.</h2>
+      <p class="lead muted reveal d2">You don't need to become a breathwork teacher. You need breath in your toolkit. This training is for people who already work with others, or want to, and would like to add breathwork safely and with confidence. No previous professional breathwork experience is necessary. A genuine interest in learning and exploring the breath is what matters.</p>
     </div>
     <div class="aud-grid">
       <div class="aud reveal"><h3>Yoga teachers</h3><p>Expand your teaching toolkit with advanced pranayama and modern breathwork techniques.</p></div>
@@ -536,7 +603,7 @@
     </div>
     <div class="fac-grid">
       <div class="fac lead-fac reveal">
-        <div class="portrait"><img src="../assets/kenaz/opt/kenaz.jpg" width="600" height="750" loading="lazy" decoding="async" alt="Patricia Udipti" /></div>
+        <div class="portrait"><img src="photos/web-patricia-pranayama.jpg" width="1272" height="2048" loading="lazy" decoding="async" style="object-position:78% 68%" alt="Patricia Udipti practising alternate-nostril breathing in a garden" /></div>
         <div>
           <h3 class="name">Patricia Udipti</h3>
           <div class="role">Lead teacher · Breathwork &amp; Pranayama · Founder of KENAZ</div>
@@ -592,6 +659,13 @@
   </div>
 </section>
 
+<!-- ===================== 10b. BRIDGE ===================== -->
+<section class="bridge" aria-label="Why this training">
+  <div class="wrap">
+    <p class="reveal">When someone in front of you gets overwhelmed, they look to you. This training teaches you to stay steady with your own breath, so you can be the calm one in the room. Then it gives you simple breathing tools to pass on, so your clients and students can settle themselves, build resilience and move through what comes up, in the session and after it.</p>
+  </div>
+</section>
+
 <!-- ===================== 11. PRICE ===================== -->
 <section class="dark pricing" id="pricing">
   <div class="wrap">
@@ -629,7 +703,7 @@
       <span class="pf"><span class="dot"></span>Flights and travel not included</span>
     </div>
     <div class="pcta reveal d3">
-      <a class="btn btn-gold" href="#register" data-cta="Pricing Reserve">Reserve your place <span class="arr">→</span></a>
+      <a class="btn btn-gold" href="#register" data-signup="pricing" data-cta="Pricing Reserve">Reserve your place <span class="arr">→</span></a>
     </div>
   </div>
 </section>
@@ -651,21 +725,50 @@
       <details><summary>Where is it, and how do I get there?</summary><p>La Tierra is a private sanctuary in the hills, about an hour from Chiang Mai, Thailand. You get yourself to Chiang Mai, and we'll send the travel details when you register.</p></details>
       <details><summary>Can I stay somewhere else?</summary><p>Yes. Choose the Course option and arrange your own stay nearby. We can point you to places close to La Tierra.</p></details>
       <details><summary>What's the food like?</summary><p>Every meal is chef-prepared from fresh, locally sourced ingredients. La Tierra is alcohol-free and smoke-free throughout.</p></details>
-      <details><summary>How do I pay?</summary><p>Send the form below. We reply personally with the next steps and the payment details. Your place is confirmed once payment is received.</p></details>
+      <details><summary>How do I pay?</summary><p>Send the registration form. We reply personally with the next steps and the payment details. Your place is confirmed once payment is received.</p></details>
     </div>
   </div>
 </section>
 
-<!-- ===================== 13. REGISTER ===================== -->
+<!-- ===================== 13. REGISTER (closing band; the form lives in the pop-up near the end of body) ===================== -->
 <section id="register">
   <div class="wrap reg-wrap">
-    <div class="section-head">
-      <span class="eyebrow reveal">Reserve your place</span>
-      <h2 class="reveal d1">Tell us a little about you.</h2>
-      <p class="lead muted reveal d2">It takes two minutes. Patricia or Yaniv will reply personally, usually within two days, with the next steps and payment details.</p>
+    <div class="reg-band reveal">
+      <h2>Reserve your place</h2>
+      <p class="lead muted">Tell us a little about you and we will be in touch with the next steps.</p>
+      <a class="btn btn-gold" href="#register" data-signup="section" data-cta="Section Reserve">Reserve your place <span class="arr">→</span></a>
     </div>
-    <div class="reg-card reveal d2">
-      <form id="reg-form" action="https://formspree.io/f/mrevwwje" method="POST">
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap foot">
+    <div>
+      <div class="mark">
+        <span class="chev" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M12.5 4.5 6.5 12l6 7.5M19 4.5 13 12l6 7.5"/></svg></span>
+        <span class="wm">KENAZ</span>
+      </div>
+      <p class="line">KENAZ · Breathwork for Practitioners · 50-Hour Breathwork &amp; Pranayama Training · Chiang Mai, <span data-fact="dates">11–18 January 2027</span></p>
+    </div>
+    <div class="contact">
+      <a href="mailto:info@kenazportal.com">info@kenazportal.com</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== SIGN-UP POP-UP ===================== -->
+<dialog id="signup" aria-labelledby="signup-title">
+  <button type="button" class="dlg-close" id="signup-close" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+  <div class="dlg-scroll" id="dlg-scroll">
+  <div class="reg-card">
+    <div class="dlg-head" id="dlg-head">
+      <h2 id="signup-title">Tell us a little about you.</h2>
+      <p class="lead muted">It takes two minutes. Patricia or Yaniv will reply personally, usually within two days, with the next steps and payment details.</p>
+    </div>
+    <form id="reg-form" action="https://formspree.io/f/mrevwwje" method="POST">
         <div class="field">
           <label for="f-name">Full name <span class="req" aria-hidden="true">*</span></label>
           <input type="text" id="f-name" name="name" autocomplete="name" required aria-required="true" aria-describedby="e-name" />
@@ -727,33 +830,16 @@
         <button class="btn btn-gold" type="submit" data-cta="Register Submit"><span class="btn-label">Send my registration</span></button>
         <p class="form-error" id="form-error" role="alert">Something went wrong. Please try again, or email <a href="mailto:info@kenazportal.com">info@kenazportal.com</a>.</p>
       </form>
-      <div class="success" id="success" role="status" tabindex="-1">
+    <div class="success" id="success" role="status" tabindex="-1">
         <div class="seal" aria-hidden="true"><span class="chev deep"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M12.5 4.5 6.5 12l6 7.5M19 4.5 13 12l6 7.5"/></svg></span></div>
         <h3 id="success-title" tabindex="-1">Thank you. We've got it.</h3>
         <p>We'll reply personally within two days with the next steps. If you don't see our email, check your spam folder or write to <a href="mailto:info@kenazportal.com">info@kenazportal.com</a>.</p>
+        <button type="button" class="btn btn-gold" id="success-close">Close</button>
       </div>
-      <p class="fine" id="fine">Sending this form doesn't commit you to anything. Questions first? Email <a href="mailto:info@kenazportal.com">info@kenazportal.com</a>.</p>
-    </div>
+    <p class="fine" id="fine">Sending this form doesn't commit you to anything. Questions first? Email <a href="mailto:info@kenazportal.com">info@kenazportal.com</a>.</p>
   </div>
-</section>
-
-</main>
-
-<!-- ===================== FOOTER ===================== -->
-<footer>
-  <div class="wrap foot">
-    <div>
-      <div class="mark">
-        <span class="chev" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M12.5 4.5 6.5 12l6 7.5M19 4.5 13 12l6 7.5"/></svg></span>
-        <span class="wm">KENAZ</span>
-      </div>
-      <p class="line">KENAZ · Breathwork for Practitioners · 50-Hour Breathwork &amp; Pranayama Training · Chiang Mai, <span data-fact="dates">11–18 January 2027</span></p>
-    </div>
-    <div class="contact">
-      <a href="mailto:info@kenazportal.com">info@kenazportal.com</a>
-    </div>
   </div>
-</footer>
+</dialog>
 
 <!-- =====================================================================
      EDIT HERE
@@ -806,6 +892,7 @@ var FACTS = {
   if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) { document.querySelectorAll('video').forEach(function(v){ v.removeAttribute('autoplay'); v.pause(); }); }
   var reduceMotion = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    if (a.hasAttribute('data-signup')) return; // sign-up openers open the pop-up instead
     a.addEventListener('click', function(ev){
       var id = a.getAttribute('href');
       if (id.length < 2) return;
@@ -825,7 +912,8 @@ var FACTS = {
   var btn = form.querySelector('button[type="submit"]');
   var btnLabel = btn.querySelector('.btn-label');
   var formErr = document.getElementById('form-error');
-  var sending = false, started = false;
+  var sending = false, started = false, formStarted = false, submitted = false, source = '';
+  var dlg = document.getElementById('signup'), scroller = document.getElementById('dlg-scroll'), opener = null;
 
   function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); }
   function setErr(input, errId, bad){
@@ -848,6 +936,11 @@ var FACTS = {
   form.addEventListener('focusin', function(){
     if (!started){ started = true; if (window.track) window.track('form_start', {page:'breathwork'}); }
   });
+  function onFormEdit(){
+    if (!formStarted){ formStarted = true; if (window.track) window.track('signup_form_start', {source: source}); }
+  }
+  form.addEventListener('input', onFormEdit);
+  form.addEventListener('change', onFormEdit);
   ['f-name','f-email','f-work'].forEach(function(id){
     var el = document.getElementById(id);
     el.addEventListener('input', function(){ if (el.classList.contains('invalid')) check(); });
@@ -861,9 +954,9 @@ var FACTS = {
     form.hidden = true;
     document.getElementById('fine').hidden = true;
     var s = document.getElementById('success'); s.classList.add('show');
-    var card = form.closest('.reg-card');
-    var y = card.getBoundingClientRect().top + window.scrollY - 90;
-    window.scrollTo({top: y < 0 ? 0 : y, behavior: reduceMotion ? 'auto' : 'smooth'});
+    document.getElementById('dlg-head').hidden = true;
+    submitted = true;
+    scroller.scrollTop = 0;
     document.getElementById('success-title').focus({preventScroll:true});
   }
 
@@ -881,13 +974,57 @@ var FACTS = {
       .then(function(res){
         if (!res || !res.ok) throw new Error('Submission failed');
         if (window.track) window.track('registration_submitted', {package: pkg ? pkg.value : '', page:'breathwork'});
+        if (window.track) window.track('signup_submit', {source: source, package: pkg ? pkg.value : ''});
         showSuccess();
       })
       .catch(function(){
         sending = false; btn.disabled = false; btnLabel.textContent = 'Send my registration';
         formErr.classList.add('show');
+        if (window.track) window.track('signup_error', {source: source});
       });
   });
+
+  // ---- sign-up pop-up ----
+  var hasModal = typeof dlg.showModal === 'function';
+  function openDlg(src, pkgValue, from){
+    source = src || 'link'; opener = from || null;
+    if (pkgValue){
+      Array.prototype.forEach.call(form.querySelectorAll('input[name=package]'), function(r){
+        if (r.value.indexOf(pkgValue) === 0){ r.checked = true; r.dispatchEvent(new Event('change',{bubbles:true})); }
+      });
+    }
+    if (!dlg.open){
+      if (hasModal) dlg.showModal();
+      else { dlg.setAttribute('open',''); dlg.classList.add('dlg-fallback'); }
+      document.body.classList.add('dlg-open'); document.documentElement.classList.add('dlg-open');
+    }
+    scroller.scrollTop = 0;
+    var first = submitted ? document.getElementById('success-title') : form.elements.name;
+    if (first) first.focus({preventScroll:true});
+    if (window.track) window.track('signup_open', {source: source});
+  }
+  function closeDlg(){
+    if (!dlg.open) return;
+    if (hasModal) dlg.close();
+    else { dlg.removeAttribute('open'); dlg.classList.remove('dlg-fallback'); dlg.dispatchEvent(new Event('close')); }
+  }
+  dlg.addEventListener('close', function(){
+    document.body.classList.remove('dlg-open'); document.documentElement.classList.remove('dlg-open');
+    if (!submitted && window.track) window.track('signup_close', {source: source, started: formStarted});
+    if (opener && opener.focus) opener.focus({preventScroll:true});
+    opener = null;
+  });
+  dlg.addEventListener('click', function(ev){ if (ev.target === dlg) closeDlg(); });
+  document.addEventListener('keydown', function(ev){ if (!hasModal && ev.key === 'Escape' && dlg.open) closeDlg(); });
+  document.getElementById('signup-close').addEventListener('click', closeDlg);
+  document.getElementById('success-close').addEventListener('click', closeDlg);
+  document.querySelectorAll('[data-signup]').forEach(function(a){
+    a.addEventListener('click', function(ev){
+      ev.preventDefault();
+      openDlg(a.getAttribute('data-signup'), a.getAttribute('data-package'), a);
+    });
+  });
+  if (location.hash === '#register' || /[?&]signup=1(&|$)/.test(location.search)) openDlg('link', null, null);
 })();
 </script>
 <script src="../assets/analytics.js"></script>
