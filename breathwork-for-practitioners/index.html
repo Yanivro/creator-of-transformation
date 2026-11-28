@@ -123,7 +123,7 @@
                linear-gradient(to bottom,rgba(18,15,12,.55),rgba(18,15,12,0) 18%)}
   .hero-inner{max-width:var(--maxw);width:100%;margin:0 auto;padding:0 var(--pad)}
   .hero-col{max-width:640px}
-  .hero h1{margin:.36em 0 .4em;text-wrap:balance}
+  .hero h1{margin:.36em 0 .4em;text-wrap:balance;font-size:clamp(31px,4.7vw,62px);max-width:21ch}
   .hero-tag{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.4);border-radius:2px;padding:8px 16px;
     font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.95);font-weight:400;line-height:1.5}
   .hero-tag .dot{width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none}
@@ -185,9 +185,10 @@
 
   /* ============ ABOUT ============ */
   .split{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(30px,5vw,76px);align-items:center}
-  .split .media video{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:2px;display:block}
+  .split .media{aspect-ratio:1/1;overflow:hidden;border-radius:2px}
+  .split .media video{width:100%;height:120%;object-fit:cover;object-position:50% 0;display:block}
   .about-copy p{margin-top:1.2em;color:#4a4a4a;font-size:clamp(16px,1.2vw,18.5px);line-height:1.75;max-width:60ch}
-  @media (max-width:880px){.split{grid-template-columns:1fr}.split .media{order:-1}.split .media video{aspect-ratio:16/11}}
+  @media (max-width:880px){.split{grid-template-columns:1fr}.split .media{order:-1;aspect-ratio:16/11}}
 
   /* ============ CURRICULUM ============ */
   .mod-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(14px,1.8vw,24px);margin-top:clamp(34px,4.4vw,56px)}
@@ -209,6 +210,18 @@
   .vid-bg{position:absolute;inset:0;z-index:0}
   .vid-bg video{width:100%;height:100%;object-fit:cover;display:block}
   .vid-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.80),rgba(20,18,16,.86))}
+  /* groups */
+  .groups-wall{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:clamp(28px,3.6vw,48px)}
+  .groups-wall figure{margin:0;overflow:hidden;aspect-ratio:1/1;background:#222}
+  .groups-wall .gw-big{grid-column:span 2;grid-row:span 2}
+  .groups-wall img{width:100%;height:100%;object-fit:cover;display:block}
+  .groups-cap{margin-top:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+  .grad-quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,34px);margin-top:clamp(40px,5vw,72px)}
+  .grad-quotes figure{margin:0;padding-top:22px;border-top:1px solid rgba(212,175,55,.55)}
+  .grad-quotes blockquote{margin:0;font-size:clamp(16px,1.25vw,18.5px);line-height:1.6;font-weight:300;color:#f3efe6}
+  .grad-quotes figcaption{margin-top:16px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent,#d4af37)}
+  .grad-quotes figcaption span{display:block;margin-top:4px;letter-spacing:.06em;text-transform:none;font-size:13px;color:rgba(255,255,255,.6)}
+  @media (max-width:760px){.groups-wall{grid-template-columns:repeat(2,1fr)}.grad-quotes{grid-template-columns:1fr}}
   .vid-band{min-height:clamp(380px,62vh,620px);display:flex;align-items:center;text-align:center}
   .vid-band .vid-bg::after{background:rgba(20,18,16,.5)}
   .vid-band h2{margin:0 auto;max-width:16ch;color:#fff}
@@ -429,8 +442,8 @@
   </div>
   <div class="hero-inner">
     <div class="hero-col">
-      <span class="eyebrow on-dark reveal">Breathwork for Practitioners · 50-hour training · Chiang Mai</span>
-      <h1 class="reveal d1">Be the calm one<br />in the room.</h1>
+      <span class="eyebrow on-dark reveal">Breathwork for Practitioners · Chiang Mai</span>
+      <h1 class="reveal d1">50-Hour Functional Breathwork &amp; Pranayama Training</h1>
       <div class="reveal d1"><span class="hero-tag"><span class="dot"></span><span><span data-fact="dates">11–18 January 2027</span> · La Tierra, Chiang Mai</span></span></div>
       <p class="sub reveal d2">Learn to steady yourself with the breath, and give the people you work with tools to stay resilient and move through what comes up.</p>
       <div class="hero-actions reveal d3">
@@ -603,7 +616,7 @@
     </div>
     <div class="fac-grid">
       <div class="fac lead-fac reveal">
-        <div class="portrait"><img src="photos/web-patricia-pranayama.jpg" width="1272" height="2048" loading="lazy" decoding="async" style="object-position:78% 68%" alt="Patricia Udipti practising alternate-nostril breathing in a garden" /></div>
+        <div class="portrait"><img src="../assets/kenaz/opt/kenaz.jpg" width="600" height="750" loading="lazy" decoding="async" alt="Patricia Udipti, founder of KENAZ" /></div>
         <div>
           <h3 class="name">Patricia Udipti</h3>
           <div class="role">Lead teacher · Breathwork &amp; Pranayama · Founder of KENAZ</div>
@@ -620,15 +633,44 @@
           <p class="bio">Certified Authentic Relating Facilitator and L2 Internal Family Systems Practitioner with 5 years' experience. Yaniv teaches the nervous system and trauma-awareness classes: how to read what is happening in a person, and how to keep a practice safe.</p>
         </div>
       </div>
-      <!-- BEC: DRAFT. Needs her surname, photo, Instagram handle and her own bio. -->
+      <!-- BEC: still needs her surname and her own bio. -->
       <div class="fac second reveal d2">
-        <div class="portrait empty"><span>Photo to come</span></div>
+        <div class="portrait"><img src="photos/bec.jpg" width="430" height="538" loading="lazy" decoding="async" alt="Bec smiling, hair tied up, in front of a warm plaster wall" /></div>
         <div>
           <h3 class="name">Bec</h3>
           <div class="role">Somatics</div>
+          <div class="handle">@becbreath</div>
           <p class="bio">Bec teaches the somatic practice in the training: slow, yin-based work with the body, woven together with the breath, drawn from her sessions with clients.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 9b. GROUPS ===================== -->
+<section class="dark" id="groups">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal">Where this comes from</span>
+      <h2 class="reveal d1">Breathwork is what we do.</h2>
+      <p class="lead reveal d2">KENAZ is a breathwork school. For the past five years Patricia has trained hundreds of breathwork facilitators, in Thailand, Costa Rica and Europe, through a 200-hour, trauma-aware programme. Breathwork for Practitioners takes the most useful parts of that training (the breathing techniques, the nervous system work and the safety skills) and puts them into one week, for people who work in other fields.</p>
+    </div>
+    <div class="groups-wall reveal d2">
+      <figure class="gw-big"><img src="photos/pair-practice.jpg" loading="lazy" decoding="async" style="object-position:70% 78%" alt="Two participants sitting facing each other on a wooden floor, holding hands, practising in a pair" /></figure>
+      <figure><img src="photos/group-pool.jpg" loading="lazy" decoding="async" style="object-position:50% 68%" alt="A training group dressed in white gathered by a pool among tropical trees" /></figure>
+      <figure><img src="photos/groups/k01.jpg" loading="lazy" decoding="async" style="object-position:50% 50%" alt="A group seated on mats in an open-air shala, practising and facing the jungle" /></figure>
+      <figure><img src="photos/groups/k13.jpg" loading="lazy" decoding="async" style="object-position:50% 50%" alt="A training group in white standing in lush jungle, some with hands in prayer position" /></figure>
+      <figure><img src="photos/groups/k06.jpg" loading="lazy" decoding="async" style="object-position:50% 50%" alt="A training group in white on a terrace with the sea and palms behind them" /></figure>
+      <figure><img src="photos/groups/k07.jpg" loading="lazy" decoding="async" style="object-position:50% 50%" alt="A large training group standing in a high-ceilinged hall under a round skylight" /></figure>
+      <figure><img src="photos/groups/k09.jpg" loading="lazy" decoding="async" style="object-position:50% 50%" alt="A training group under a wooden gazebo holding their certificates" /></figure>
+      <figure><img src="photos/group-certificates.jpg" loading="lazy" decoding="async" style="object-position:50% 58%" alt="Graduates laughing and holding up their certificates under a string of prayer flags" /></figure>
+      <figure><img src="photos/groups/k03.jpg" loading="lazy" decoding="async" style="object-position:50% 50%" alt="A training group in white beside a pool under a brick and wood pavilion" /></figure>
+    </div>
+    <p class="groups-cap reveal d2">Some of the groups who have trained with KENAZ</p>
+    <div class="grad-quotes">
+      <figure class="reveal"><blockquote>&ldquo;There is a full foundation in Trauma-Awareness and all the tools you need to learn how to hold space with integrity and safety.&rdquo;</blockquote><figcaption>Jasmin P. <span>Facilitator training, Thailand, May 2025</span></figcaption></figure>
+      <figure class="reveal d1"><blockquote>&ldquo;It gave me so many tools for the road ahead - on a professional level, but also for my own growth and transformation.&rdquo;</blockquote><figcaption>Sebastian K. <span>Facilitator training, Thailand, May 2025</span></figcaption></figure>
+      <figure class="reveal d2"><blockquote>&ldquo;The gentle and welcoming container has created a space where I could open and enjoy this process. Now I can guide other people through Breathwork, and they have amazing experiences.&rdquo;</blockquote><figcaption>Juan C. <span>Facilitator training, Thailand, October 2025</span></figcaption></figure>
     </div>
   </div>
 </section>
